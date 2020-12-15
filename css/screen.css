@@ -1,0 +1,842 @@
+/*------------------------------------*\
+#FONTS
+\*------------------------------------*/
+
+/*------------------------------------*\
+#Variables
+\*------------------------------------*/
+
+:root {
+    /* colors */
+    --color-alpha: #ECF7FF;
+    --color-beta: #092844;
+
+    --color-front: var(--color-beta);
+    --color-back: var(--color-alpha);
+
+    --global-background: var(--color-back);
+    --global-text-color: var(--color-front);
+
+    --global-logo-fill: var(--color-front);
+    --global-border-color: var(--color-front);
+
+    --global-color-error: #ff3333;
+    --global-color-error-transparent: #FF3333bf;
+    --global-color-error-x-transparent: #FF33334d;
+
+
+
+    --global-color-alpha: #3385FF;
+    --global-color-alpha-dark: #2E77E6;
+
+    --global-color-neutral-xxxx-light: #F5F6FA;
+    --global-color-neutral-xxx-light: #E2E3E7;
+
+    /* opacity */
+
+    /* transitions */
+
+    /* borders */
+    --global-borderRadius: 3px;
+    --global-borderWidth: 1px;
+
+    /* transitions */
+    --global-transitionTiming-alpha: .1s ease-out;
+
+    /* Baseline settings */
+    --global-baseline: 8px;         
+    --global-whitespace: calc(var(--global-baseline) * 3); /* = 24px */
+
+    --global-whitespace-xs: calc(var(--global-baseline) / 2); /* = 4px */
+    --global-whitespace-sm: calc(var(--global-baseline) * 1); /*  = 8px */
+    --global-whitespace-md: calc(var(--global-baseline) * 2); /*  = 16px */
+    --global-whitespace-lg: calc(var(--global-baseline) * 4); /*  = 32px */
+    --global-whitespace-xl: calc(var(--global-whitespace) * 2); /*  = 48px */
+    --global-whitespace-xxl: calc(var(--global-whitespace) * 3); /*  = 72px */
+
+    /* forms */
+    --global-placeholder-color: var(--global-color-neutral-x-light);
+    --global-input-backgroundColor: White;
+    --global-input-color: var(--global-color-neutral-xxxx-dark);
+    --global-input-borderColor: var(--global-color-neutral-xxx-light);
+    --global-input-hover-borderColor: var(--global-color-neutral-xx-light);
+    --global-input-focus-borderColor: var(--global-color-alpha);
+    --global-input-focus-boxShadowColor: var(--global-color-alpha-x-transparent);
+    --global-input-focus-boxShadow: 0 0 0 3px var(--global-input-focus-boxShadowColor);
+    --global-input-error-borderColor: #ff3333;
+}
+
+/* @media (prefer-color-scheme) */
+
+/*------------------------------------*\
+#GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+    /* POSITIONING */
+
+    /* BOX MODEL */
+    box-sizing: border-box;
+
+    /* FONT */
+    color: var(--global-text-color);
+    font-size: 16px; /* font-size op de body = 1REM */
+    line-height: 1.5;
+    font-family: 'Open Sans', Helvetica, arial, sans-serif;
+    font-feature-settings: "zero" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* APPEARANCE */
+    background-color: var(--color-back);
+
+    /* OTHER */
+    
+}
+
+html[data-theme='dark'] {
+    background-color: var(--color-front);
+    /* --color-front: var(--color-alpha);
+    --color-back: var(--color-beta); */
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/*
+* Remove text-shadow in selection highlight:
+* https://twitter.com/miketaylr/status/12228805301
+*
+* Customize the background color to match your design.
+*/
+
+::-moz-selection {
+    background: blue;
+    color: white;
+    text-shadow: none;
+}
+
+::selection {
+    background: blue;
+    color: white;
+    text-shadow: none;
+}
+
+/*------------------------------------*\
+#Elements
+\*------------------------------------*/
+
+/*
+Elements: Images
+---
+Default markup for images to make them responsive
+*/
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 36px;
+    line-height: 48px;
+    margin: 0 0 24px;
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 40px;
+    margin: 0 0 24px;
+}
+
+h3 {
+    font-size: 26px;
+    line-height: 32px;
+    margin: 0 0 24px;
+}
+
+h4,
+h5,
+h6 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    margin: 0 0 24px;
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+    margin: 0 0 24px;
+}
+
+ul,
+ol {
+    padding-left: 24px;
+}
+
+li ul,
+li ol {
+    margin-bottom: 0;
+}
+
+blockquote {
+    font-style: normal;
+    font-size: 23px;
+    line-height: 32px;
+    margin: 0 0 24px;
+}
+
+blockquote * {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+figcaption {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 8px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: LightGrey;
+    margin: 0 0 24px;
+}
+
+a {
+    color: blue;
+    outline-color: blue;
+    outline-width: medium;
+    outline-offset: 2px;
+}
+
+a:visited,
+a:active {
+    color: blue;
+}
+
+a:hover,
+a:focus {
+    color: blue;
+}
+
+label,
+input {
+    display: block;
+}
+
+select {
+    width: 100%;
+}
+
+input::placeholder {
+    color: gray;
+}
+
+/*------------------------------------*\
+#OBJECTS
+\*------------------------------------*/
+
+
+/*
+    Objects: Row
+    ---
+    Creates a horizontal row that stretches the viewport and adds padding around children
+*/
+
+.o-row {
+    position: relative;
+    padding: calc(8 * var(--global-baseline)) calc(8 * var(--global-baseline)) 0;
+}
+
+.o-row--login {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+/* size modifiers */
+
+.o-row--lg {
+    padding-top: var(--global-whitespace-xl);
+    padding-bottom: var(--global-whitespace);
+}
+
+.o-row--xl {
+    padding-top: var(--global-whitespace-xxl);
+    padding-bottom: var(--global-whitespace-xl);
+}
+
+@media (min-width: 768px) {
+    .o-row {
+        padding-left: var(--global-whitespace-xl);
+        padding-right: var(--global-whitespace-xl);
+    }
+}
+
+@media (min-width: 992px) {
+    .o-row--xl {
+        padding-top: 96px;
+        padding-bottom: var(--global-whitespace-xxl);
+    }
+}
+
+
+/*
+    Objects: Container
+    ---
+    Creates a horizontal container that sets de global max-width
+*/
+
+.o-container {
+    margin-left: auto;
+    margin-right: inherit;
+    max-width: 43.75rem; /* 79.5 * 16px = 1272 */
+    width: 100%;
+}
+
+/*
+    Object: Button reset
+    ---
+    Small button reset object
+*/
+
+
+.o-button-reset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+}
+
+/*
+    Object: Hide accessible
+    ---
+    Accessibly hide any element
+*/
+
+.o-hide-accessible {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+
+.o-section {
+    position: relative;
+    min-width: 400px;
+}
+
+.o-section + .o-section {
+    padding-top: var(--global-whitespace);
+}
+
+@media (min-width: 768px) {
+    .o-section--lg + .o-section--lg,
+    .o-section--xl + .o-section--xl {
+        padding-top: var(--global-whitespace-xl);
+    }
+}
+
+@media (min-width: 992px) {
+    .o-section--xl + .o-section--xl {
+        padding-top: var(--global-whitespace-xxl);
+    }
+}
+
+/*------------------------------------*\
+#COMPONENTS
+\*------------------------------------*/
+
+/*
+    Component: Logo
+    ---
+    Website main logo
+*/
+
+.c-logo {
+    display: flex;
+    padding-top: 2rem;
+    position: sticky;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1rem;
+}
+
+/*
+    Component: horloge
+    ---
+    The horloge
+*/
+
+.c-horloge__logo {
+    height: 2rem;
+    width: 2rem;
+    fill: var(--global-logo-fill);
+    stroke: var(--global-logo-fill);
+    /* color: var(--global-logo-fill); */
+}
+
+.c-logo .c-horloge__logo {
+    margin-right: 0.5rem;
+}
+
+.c-horloge {
+    height: 25rem;
+    width: 25rem;
+    fill: var(--global-logo-fill);
+    stroke: var(--global-logo-fill);
+}
+
+/*
+    Component: App
+    ---
+    Main app wrapper
+*/
+
+.c-app {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 2 * 1rem);
+    box-sizing: content-box; /* Paddig optellen bij de (max)width ipv. het toevoegen aan de binnenkant */
+    max-width: 25rem; /* Is dit slim...? */
+    margin: 0 auto;
+    padding: 0 2rem 2rem 2rem; /* 32px 32px (in onze huidige font-size) */
+}
+
+.c-app__summary {
+    font-size: 1.75rem;
+    line-height: 2.5rem;
+}
+
+.c-title {
+    margin: auto;
+    padding: 40px 0 16px 0;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.c-hour {
+    color: var(--global-text-color);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+
+/*
+    Component: clock
+    ---
+    clock with sun visualisation
+*/
+
+.c-clock {
+    margin-top: auto; /* Vul de ruimte maar op */ 
+}
+
+.c-clock__hour {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+
+    font-size: 0.75rem;
+    line-height: 0.875rem;
+
+    transform: translateY(50%); /* 22px : percentage van maken */
+}
+.c-clock__hour::before {
+    content: attr(data-time);
+    margin-bottom: 0.5rem;
+}
+
+
+.c-form-field--option {
+    display: flex;
+    align-items: center;
+}
+
+.c-custom-select {
+    display: block;
+    position: relative;
+}
+
+.c-custom-select__symbol {
+    width: var(--global-whitespace);
+    height: var(--global-whitespace);
+    position: absolute;
+    top: calc(var(--global-whitespace) / 2);
+    right: calc(var(--global-whitespace) / 2);
+    pointer-events: none;
+    fill: var(--color-front);
+}
+
+/*
+    Component: Input
+    ---
+    Class to put on all input="text" like form inputs
+*/
+
+.c-input {
+    --input-transition: all var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    border-radius: var(--input-borderRadius, var(--global-borderRadius));
+    border: var(--input-borderWidth, var(--global-borderWidth)) solid var(--input-borderColor, var(--global-input-borderColor));
+    background-color: transparent;
+    color: var(--global-input-color);
+    font-family: inherit;
+    font-size: 16px;
+    line-height: calc(var(--global-baseline) * 3);
+    padding: calc(var(--global-baseline) * 1.5 - var(--global-borderWidth)) var(--global-whitespace-md);
+    outline: none;
+    transition: var(--input-transition);
+}
+
+.c-input:hover {
+    border-color: var(--input-hover-borderColor, var(--global-input-hover-borderColor));
+}
+
+.c-input:focus,
+.c-input:active {
+    border-color: var(--input-focus-borderColor, var(--global-input-focus-borderColor));
+    box-shadow: var(--global-input-focus-boxShadowSpread) var(--input-focus-boxShadowColor, var(--global-input-focus-boxShadowColor));
+}
+
+/*
+Input password with toggle checkbox on top of it needs
+more padding on the right to avoid overlap
+*/
+
+.c-input--password-with-toggle {
+    padding-right: 52px;
+}
+
+/* input password with floating label */
+/* 
+.c-input--with-floating-label:focus {
+    box-shadow: 0 0 0 1px var(--global-input-focus-borderColor);
+} */
+
+/* option input for checkboxes and radio buttons */
+
+.c-option {
+    margin-right: var(--global-whitespace-sm);
+}
+
+
+.c-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.c-line {
+    border-right: 1px solid var(--color-front);
+}
+
+.c-grid__item {
+    text-align: center;
+    padding: var(--global-whitespace-lg);
+}
+.u-column-span-6 {
+    grid-column: span 6;
+}
+
+
+/* option input for checkboxes and radio buttons */
+
+.c-option {
+    margin-right: var(--global-whitespace-sm);
+}
+
+/*
+    Component: Label
+    ---
+    Class to put on all form labels
+*/
+
+.c-label {
+    --label-color: var(--color-front);
+    margin-bottom: 0;
+    padding-top: var(--global-whitespace-lg);
+    padding-bottom: var(--global-whitespace-sm);
+    font-size: 18px;
+    line-height: 20px;
+    color: var(--color-front);
+}
+
+.c-label--option {
+    padding-bottom: 0;
+}
+
+.c-label__error-message {
+    font-weight: 600;
+	float: right;
+	display: none;
+}
+
+.c-label__error-message.is-visible {
+	display: block;
+}
+
+.c-label--floating {
+    position: absolute;
+    top: calc(var(--global-baseline) * 1.5);
+    left: var(--global-whitespace-sm);
+    padding: var(--global-whitespace-xs)  var(--global-whitespace-sm);
+    background-color: transparent;
+    transition: transform var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
+    z-index: 1;
+    border-radius: var(--global-borderRadius);
+}
+
+.is-floating,
+.c-form-field:focus-within .c-label--floating {
+    transform: translateY(calc(var(--global-baseline) * -3))
+}
+
+@media (prefers-color-scheme: dark) {
+    /* .c-label--floating {
+        --label--floating-backgroundColor: transparent;
+    } */
+}
+
+/*
+    Component: Custom Toggle
+    ---
+    Visually change a checkbox into a toggle
+*/
+
+
+
+/*
+    Component: Card
+    ---
+    Card with box shadow
+*/
+
+.c-card {
+    background-color: transparent;
+    margin-bottom: var(--global-whitespace);
+    overflow: hidden;
+}
+
+
+.c-card__title {
+    text-align: center;
+    font-size: 48px;
+    line-height: calc(var(--global-baseline) * 3);
+    font-weight: 600;
+}
+
+.c-card__undertitle {
+    text-align: center;
+    font-size: 36px;
+    line-height: calc(var(--global-baseline) * 3);
+    font-weight: 400;
+}
+
+.c-card__text {
+    text-align: center;
+    font-size: 24px;
+    line-height: calc(var(--global-baseline) * 3);
+    font-weight: 400;
+}
+
+/* This allows c-card__body and __footer to have equal padding everywhere */
+
+.c-card__body > *:last-child,
+.c-card__footer > *:last-child,
+.c-card__body > *:last-child > *:last-child,
+.c-card__footer > *:last-child > *:last-child {
+    margin-bottom: 0;
+}
+
+@media (min-width: 27em) {
+    .c-card__body {
+        padding: var(--global-whitespace-xl);
+    }
+
+    .c-card__title {
+        margin-bottom: var(--global-whitespace-xl);
+    }
+}
+
+/* @media (prefers-color-scheme: dark) {
+    .c-card {
+        --card-backgroundColor: var(--global-color-neutral-xxx-dark);
+        --card__footer-borderColor: var(--global-color-neutral-xxxx-dark);
+    }
+} */
+
+/*
+    Component: Forms
+    ---
+    Everything form related here
+*/
+
+.c-form-field {
+    position: relative;
+    border-radius: 5px;
+}
+
+.c-form-field--option {
+    display: flex;
+    align-items: center;
+}
+
+.c-image {
+    display: block;
+    margin-left: auto;
+    width: 16.875rem;
+}
+
+/*------------------------------------*\
+#UTILITIES
+\*------------------------------------*/
+
+/*
+    Utilities: Mute
+    Mute with opacity
+*/
+
+.u-muted {
+    opacity: var(--global-muted-opacity);
+}
+
+/*------------------------------------*\
+#STATES
+\*------------------------------------*/
+
+/*
+    Change the theme using CSS vars.
+*/
+
+/* Night version: just switch the light and dark vars */
+.is-night {
+    --color-front: var(--color-alpha);
+    --color-back: var(--color-beta);
+}
+
+/*------------------------------------*\
+#MEDIA
+\*------------------------------------*/
+
+/*
+    Print styles.
+    ---
+    Inlined to avoid the additional HTTP request:
+    http://www.phpied.com/delay-loading-your-print-css/
+*/
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        /* Black prints faster:
+        http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+    /*
+    * Don't show links that are fragment identifiers,
+    * or use the `javascript:` pseudo protocol
+    */
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+    pre {
+        white-space: pre-wrap !important;
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    /*
+    * Printing Tables:
+    * http://css-discuss.incutio.com/wiki/Printing_Tables
+    */
+    thead {
+        display: table-header-group;
+    }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

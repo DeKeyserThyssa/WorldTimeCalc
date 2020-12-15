@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" class="is-day">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorldTimeCalc 🕰</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- <link rel="icon" type="image/png" sizes="32x32" href="img/Logo.png"> -->
+    <!-- <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#0f3557"> -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/screen.css">
+
+    <script src="./script/app.js"></script>
+    <script src="./script/dark.js"></script>
+</head>
+<body>
+    <main class="c-app">
+        <h1 class="c-logo u-muted">
+          <svg class="c-horloge__logo" xmlns="http://www.w3.org/2000/svg" width="32.974" height="32.538" viewBox="0 0 32.974 32.538">
+            <g id="Logo" transform="translate(-880.5 -83.5)">
+              <ellipse id="Ellipse_3" data-name="Ellipse 3" cx="15.987" cy="15.769" rx="15.987" ry="15.769" transform="translate(881 84)" fill="none" stroke="#040405" stroke-miterlimit="10" stroke-width="1"/>
+              <line id="Line_5" data-name="Line 5" y2="4.64" transform="translate(897.183 111.36)" fill="none" stroke="#040405" stroke-miterlimit="10" stroke-width="1"/>
+              <line id="Line_6" data-name="Line 6" y2="4.65" transform="translate(897.034 84)" fill="none" stroke="#040405" stroke-miterlimit="10" stroke-width="1"/>
+              <line id="Line_7" data-name="Line 7" x2="4.64" transform="translate(881 99.977)" fill="none" stroke="#040405" stroke-miterlimit="10" stroke-width="1"/>
+              <line id="Line_8" data-name="Line 8" x2="4.64" transform="translate(908.36 100.005)" fill="none" stroke="#040405" stroke-miterlimit="10" stroke-width="1"/>
+              <path id="Path_2" data-name="Path 2" d="M290.814,428.539l1.62-5.12.81,2.2,2.31.4Z" transform="translate(598.987 -320.731)" fill="#040405"/>
+              <line id="Line_10" data-name="Line 10" x1="6.062" y2="7.082" transform="translate(891.308 98.926)" fill="none" stroke="#040405" stroke-miterlimit="10" stroke-width="1"/>
+              <line id="Line_9" data-name="Line 9" x1="8.87" y1="5.973" transform="translate(888.5 93.5)" fill="none" stroke="#040405" stroke-miterlimit="10" stroke-width="1"/>
+              <path id="Path_1" data-name="Path 1" d="M286.544,412.9l5.35.5-1.99,1.26.11,2.34Z" transform="translate(598.987 -320.731)" fill="#040405"/>
+            </g>
+          </svg>
+            WorldTimeCalc
+            <!-- <div class="c-toggle-container">
+              Dark Mode
+              <input type="checkbox" id="switch" name="theme" /><label for="switch">Toggle</label>
+            </div> -->
+        </h1>
+        <div>
+            <div>
+                <p class="c-title">
+                    Local time
+                </p>
+            </div>
+            <svg class="c-horloge" xmlns="http://www.w3.org/2000/svg" width="401" height="401" viewBox="0 0 401 401">
+              <g id="Clock" transform="translate(420.41 329.96)">
+                <circle id="Ellipse_2" data-name="Ellipse 2" cx="200" cy="200" r="200" transform="translate(-419.91 -329.46)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+                <line id="Line_1" data-name="Line 1" y2="32.64" transform="translate(-217.603 37.81)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+                <line id="Line_2" data-name="Line 2" y2="32.63" transform="translate(-219.453 -329.45)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+                <line id="Line_3" data-name="Line 3" x2="32.64" transform="translate(-419.91 -129.826)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+                <line id="Line_4" data-name="Line 4" x2="32.64" transform="translate(-52.55 -129.46)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+              </g>
+              <text class="c-hour js-localtime" x="200" y="200" text-anchor="middle" alignment-baseline="middle" >12:00</text>
+            </svg>           
+        </div>
+        <div>
+            <div class="o-section">
+                <p class="c-form-field">
+                    <div class="c-label" for="select1">
+                        Select a timezone
+                    <div>
+                    <span class="c-custom-select">
+                        <select class="c-input c-custom-select__input js-timezone" name="select1" id="select1">
+                            <option value="Etc/UTC">Etc/UTC</option>
+                            <option value="London">London</option>
+                            <option value="Berlin">Berlin</option>
+                            <option value="Prague">Prague</option>
+                        </select>
+                        <svg class="c-custom-select__symbol" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M7,10l5,5,5-5Z"/>
+                        </svg>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="c-grid">
+          <div class="c-grid__item c-line .u-column-span-6">Time <br> 11:00 </div>
+          <div class="c-grid__item .u-column-span-6">Difference <br> 1h </div>
+        </div>
+        
+    </main>
+</body>
+</html>

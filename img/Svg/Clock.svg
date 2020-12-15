@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="401" height="401" viewBox="0 0 401 401">
+  <g id="Clock" transform="translate(420.41 329.96)">
+    <circle id="Ellipse_2" data-name="Ellipse 2" cx="200" cy="200" r="200" transform="translate(-419.91 -329.46)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+    <line id="Line_1" data-name="Line 1" y2="32.64" transform="translate(-217.603 37.81)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+    <line id="Line_2" data-name="Line 2" y2="32.63" transform="translate(-219.453 -329.45)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+    <line id="Line_3" data-name="Line 3" x2="32.64" transform="translate(-419.91 -129.826)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+    <line id="Line_4" data-name="Line 4" x2="32.64" transform="translate(-52.55 -129.46)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+  </g>
+</svg>
