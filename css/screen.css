@@ -63,7 +63,6 @@
     --global-input-focus-borderColor: var(--global-color-alpha);
     --global-input-focus-boxShadowColor: var(--global-color-alpha-x-transparent);
     --global-input-focus-boxShadow: 0 0 0 3px var(--global-input-focus-boxShadowColor);
-    --global-input-error-borderColor: #ff3333;
 }
 
 /* @media (prefer-color-scheme) */
@@ -500,6 +499,9 @@ input::placeholder {
     margin-bottom: 0.5rem;
 }
 
+.c-form-field {
+    position: relative;
+}
 
 .c-form-field--option {
     display: flex;
@@ -720,22 +722,6 @@ more padding on the right to avoid overlap
         --card__footer-borderColor: var(--global-color-neutral-xxxx-dark);
     }
 } */
-
-/*
-    Component: Forms
-    ---
-    Everything form related here
-*/
-
-.c-form-field {
-    position: relative;
-    border-radius: 5px;
-}
-
-.c-form-field--option {
-    display: flex;
-    align-items: center;
-}
 
 .c-image {
     display: block;

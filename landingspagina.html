@@ -19,11 +19,11 @@
               background-image: url('/Project/img/klok.jpg');
             }
         </style>
-        <script src="script/reg.js"></script>
+        <script rel="stylesheet" href="./script/reg.js"></script>
     </head>
     <body>
         <section class="o-row o-row--lg o-row--login o-row--beta">
-            <img class="c-image" src="/Project/img//Mock-up.png" alt="mock-up">
+            <img class="c-image" src="/Project/img/Mock-up.png" alt="mock-up">
             <div class="o-container u-max-width-xs">
                 <form class="c-card" action="#">
                     <div class="c-card__body">                       
@@ -39,7 +39,22 @@
                             WorldTimeCalc is under construction... Receive 
                             all news by leaving some personal data below
                         </p>
-                        <div>
+
+                        <p class="c-form-field js-email-field">
+                            <label class="c-label js-email-label" for="username">
+                                Email address
+                                <span class="c-label__error-message js-email-error-message">
+                                    This field is required
+                                </span>
+                            </label>
+                            <input class="c-input js-email-input" type="email" name="username" id="username" placeholder="e.g. john@doe.com" required>
+                        </p>
+
+                        <p class="u-mb-md">
+                            <!-- Button -->
+                            <button class="o-button-reset c-button js-sign-in-button">Sign in</button>
+                        </p>
+                        <!-- <div>
                             <p class="c-form-field">
                                 <label class="c-label c-label--floating js-floating-label" for="username">
                                 </label>
@@ -59,7 +74,7 @@
                                 </label>
                                 <input class="c-input c-input--with-floating-label js-floating-input" type="email" name="username" id="username" placeholder="Email" required>
                             </p>
-                        </div>
+                        </div> -->
                     </div>
                 </form>
             </div>
