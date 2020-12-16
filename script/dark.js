@@ -1,18 +1,34 @@
-var checkbox = document.querySelector('input[name=theme]');
+function myFunction() {
+    var element = document.body;
+    element.classList.toggle("is-night");
+}
 
-// checkbox.addEventListener('change', function() {
-//     if(this.checked) {
-//         trans()
-//         document.documentElement.setAttribute('data-theme', 'dark')
-//     } else {
-//         trans()
-//         document.documentElement.setAttribute('data-theme', 'light')
+
+// const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+// const currentTheme = localStorage.getItem('theme');
+
+// if (currentTheme) {
+//     document.documentElement.setAttribute('data-theme', currentTheme);
+  
+//     if (currentTheme === 'dark') {
+//         toggleSwitch.checked = true;
 //     }
-// })
-
-// let trans = () => {
-//     document.documentElement.classList.add('transition');
-//     window.setTimeout(() => {
-//         document.documentElement.classList.remove('transition')
-//     }, 1000)
 // }
+
+// function switchTheme(e) {
+//     if (e.target.checked) {
+//         document.documentElement.setAttribute('data-theme', 'dark');
+//         localStorage.setItem('theme', 'dark');
+//     }
+//     else {        document.documentElement.setAttribute('data-theme', 'light');
+//           localStorage.setItem('theme', 'light');
+//     }    
+// }
+
+// toggleSwitch.addEventListener('change', switchTheme, false);
+
+// document .querySelector(".toggleButton") .addEventListener("click", toggleDarKMode);
+//    function toggleDarKMode() {
+//       var element = document.body;
+//       element.classList.toggle("is-night");
+//    }
