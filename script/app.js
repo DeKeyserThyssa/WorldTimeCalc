@@ -38,7 +38,7 @@ const showResult = (queryResponse) => {
 
 let getAPI = async(timezone) => {
     // Eerst bouwen we onze url op
-    const endpoint = `http://worldtimeapi.org/api/ip/timezone/${timezone}`;
+    const endpoint = `https://worldtimeapi.org/api/ip/timezone/${timezone}`;
 
     // Met de fetch API proberen we de data op te halen..
     const request = await fetch(`${endpoint}`);
