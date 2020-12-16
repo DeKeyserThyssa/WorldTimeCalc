@@ -498,6 +498,7 @@ input::placeholder {
     --card-borderRadius: var(--global-borderRadius);
     background-color: var(--card-backgroundColor, White);
     margin-bottom: var(--global-whitespace);
+    margin-right: auto;
     border-radius: var(--card-borderRadius, var(--global-borderRadius));
     box-shadow: 0 0 0 1px rgba(0,0,0, 0.05), 0 2px 4px rgba(0,0,0,.075);
     overflow: hidden;
@@ -677,7 +678,7 @@ input::placeholder {
 
 .c-image {
     display: block;
-    margin-left: 200px;
+    margin-left: auto;
     width: 16.875rem;
 }
 
