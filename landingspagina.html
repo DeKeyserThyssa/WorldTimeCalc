@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Landinspagina</title>
+        <title>Landingspagina</title>
         <meta name="description" content="This is my HTML5 boilerplate.">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="msapplication-TileColor" content="#3385FF">
@@ -12,22 +12,35 @@
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/screen.css">
+        <link rel="stylesheet" href="css/screenlandingspagina.css">
 
         <style>
             section {
-              background-image: url('/Project/img/klok.jpg');
+              background-image: url('img/klok.jpg');
             }
         </style>
         <script rel="stylesheet" href="./script/reg.js"></script>
     </head>
     <body>
         <section class="o-row o-row--lg o-row--login o-row--beta">
-            <img class="c-image" src="/Project/img/Mock-up.png" alt="mock-up">
+            <img class="c-image" src="img/MockUp.png" alt="mock-up">
             <div class="o-container u-max-width-xs">
                 <form class="c-card" action="#">
                     <div class="c-card__body">                       
-                        <p class="c-card__title">
+                        <p class="c-card__title c-logo">
+                            <svg class="c-logo__symbol" xmlns="http://www.w3.org/2000/svg" width="32.974" height="32.538" viewBox="0 0 32.974 32.538">
+                                <g id="Logo" transform="translate(-880.5 -83.5)">
+                                  <ellipse e" id="Ellipse_3" data-name="Ellipse 3" cx="15.987" cy="15.769" rx="15.987" ry="15.769" transform="translate(881 84)" fill="none" stroke="#040405" stroke-miterlimit="10" stroke-width="1"/>
+                                  <line id="Line_5" data-name="Line 5" y2="4.64" transform="translate(897.183 111.36)" fill="none" stroke="#040405" stroke-miterlimit="10" stroke-width="1"/>
+                                  <line id="Line_6" data-name="Line 6" y2="4.65" transform="translate(897.034 84)" fill="none" stroke="#040405" stroke-miterlimit="10" stroke-width="1"/>
+                                  <line id="Line_7" data-name="Line 7" x2="4.64" transform="translate(881 99.977)" fill="none" stroke="#040405" stroke-miterlimit="10" stroke-width="1"/>
+                                  <line id="Line_8" data-name="Line 8" x2="4.64" transform="translate(908.36 100.005)" fill="none" stroke="#040405" stroke-miterlimit="10" stroke-width="1"/>
+                                  <path id="Path_2" data-name="Path 2" d="M290.814,428.539l1.62-5.12.81,2.2,2.31.4Z" transform="translate(598.987 -320.731)" fill="#040405"/>
+                                  <line id="Line_10" data-name="Line 10" x1="6.062" y2="7.082" transform="translate(891.308 98.926)" fill="none" stroke="#040405" stroke-miterlimit="10" stroke-width="1"/>
+                                  <line id="Line_9" data-name="Line 9" x1="8.87" y1="5.973" transform="translate(888.5 93.5)" fill="none" stroke="#040405" stroke-miterlimit="10" stroke-width="1"/>
+                                  <path id="Path_1" data-name="Path 1" d="M286.544,412.9l5.35.5-1.99,1.26.11,2.34Z" transform="translate(598.987 -320.731)" fill="#040405"/>
+                                </g>
+                              </svg>
                             WorldTimeCalc
                         </p>
                         <p class="c-card__undertitle">
@@ -41,13 +54,14 @@
                         </p>
 
                         <p class="c-form-field js-email-field">
-                            <label class="c-label js-email-label" for="username">
-                                Email address
+                            <label class="c-label c-label--floating js-email-label js-floating-label" for="username">
+                                Email
                                 <span class="c-label__error-message js-email-error-message">
                                     This field is required
                                 </span>
                             </label>
-                            <input class="c-input js-email-input" type="email" name="username" id="username" placeholder="e.g. john@doe.com" required>
+                            <input class="c-input c-input--with-floating-label  js-email-input js-floating-input" type="email" name="username" id="username"
+                                required>
                         </p>
 
                         <p class="u-mb-md">

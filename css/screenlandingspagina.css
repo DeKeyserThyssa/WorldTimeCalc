@@ -19,14 +19,72 @@
 
     --global-logo-fill: var(--color-front);
     --global-logo-stroke: var(--color-front);
+    --global-border-color: var(--color-front);
+
+    --global-input-borderColor: var(--color-front);
+    --global-input-backgroundColor: var(--color-back);
+    --global-input-color: var(--color-back);
+    --global-logo-fill: var(--color-front);
+    --global-logo-stroke: var(--color-front);
+    --global-border-color: var(--color-front);
+    --global-input-hover-borderColor: var(--color-front);
 
     --global-color-error: #ff3333;
     --global-color-error-transparent: #FF3333bf;
     --global-color-error-x-transparent: #FF33334d;
 
 
+
     --global-color-alpha: #3385FF;
     --global-color-alpha-dark: #2E77E6;
+
+    --global-color-neutral-xxxx-light: #F5F6FA;
+    --global-color-neutral-xxx-light: #E2E3E7;
+
+    /* opacity */
+
+    /* transitions */
+    --global-transitionEasing-out: ease-out;
+    --global-transitionEasing-out-cubic: cubic-bezier(0.22, 0.61, 0.36, 1);
+    --global-transitionDuration-alpha: .1s;
+    --global-transitionDuration-beta: .2s;
+    --global-transitionDuration-gamma: .3s;
+
+
+    /* borders */
+    --global-borderRadius: 3px;
+    --global-borderWidth: 1px;
+
+    /* transitions */
+
+    /* Baseline settings */
+    --global-baseline: 8px;         
+    --global-whitespace: calc(var(--global-baseline) * 3); /* = 24px */
+
+    --global-whitespace-xs: calc(var(--global-baseline) / 2); /* = 4px */
+    --global-whitespace-sm: calc(var(--global-baseline) * 1); /*  = 8px */
+    --global-whitespace-md: calc(var(--global-baseline) * 2); /*  = 16px */
+    --global-whitespace-lg: calc(var(--global-baseline) * 4); /*  = 32px */
+    --global-whitespace-xl: calc(var(--global-whitespace) * 2); /*  = 48px */
+    --global-whitespace-xxl: calc(var(--global-whitespace) * 3); /*  = 72px */
+
+    /* forms */
+    --global-placeholder-color: var(--global-color-neutral-x-light);
+    --global-input-backgroundColor: White;
+    --global-input-color: var(--global-color-neutral-xxxx-dark);
+    --global-input-borderColor: var(--global-color-neutral-xxx-light);
+    --global-input-hover-borderColor: var(--global-color-neutral-xx-light);
+    --global-input-focus-borderColor: var(--global-color-alpha);
+    --global-input-focus-boxShadowColor: var(--global-color-alpha-x-transparent);
+    --global-input-focus-boxShadow: 0 0 0 3px var(--global-input-focus-boxShadowColor);
+
+
+
+    /* Global colors */
+    --global-color-alpha-light: #4F95FF;
+    --global-color-alpha: #3385FF;
+    --global-color-alpha-dark: #2E77E6;
+    --global-color-alpha-x-dark: #1B4186;
     --global-color-alpha-transparent: #3385ffbf;
     --global-color-alpha-x-transparent: #3385ff4d;
 
@@ -34,30 +92,39 @@
     --global-color-neutral-xxx-light: #E2E3E7;
     --global-color-neutral-xx-light: #caccd4;
     --global-color-neutral-x-light: #b5b6c0;
+    --global-color-neutral-light: #a0a1ad;
+    --global-color-neutral: #8b8c9a;
+    --global-color-neutral-dark: #757787;
+    --global-color-neutral-x-dark: #606274;
     --global-color-neutral-xx-dark: #4b4c60;
+    --global-color-neutral-xxx-dark: #35374d;
     --global-color-neutral-xxxx-dark: #20223a;
+    --global-color-error: #FF3333;
+    --global-color-error-transparent: #FF3333bf;
+    --global-color-error-x-transparent: #FF33334d;
 
-    /* opacity */
+    /* global page settings */
+    --global-page-color: var(--global-color-neutral-xxxx-dark);
+    --global-page-backgroundColor: var(--global-color-neutral-xxxx-light);
+    --global-selection-backgroundColor: var(--global-color-alpha);
 
-    /* transitions */
-
-    /* borders */
+    /* border radius */
     --global-borderRadius: 3px;
     --global-borderWidth: 1px;
 
     /* transitions */
-    --global-transitionTiming-alpha: .1s ease-out;
     --global-transitionEasing-out: ease-out;
     --global-transitionEasing-out-cubic: cubic-bezier(0.22, 0.61, 0.36, 1);
     --global-transitionDuration-alpha: .1s;
     --global-transitionDuration-beta: .2s;
     --global-transitionDuration-gamma: .3s;
 
-    /* Baseline settings */
+
+     /* Baseline settings */
     --global-baseline: 8px;         
     --global-whitespace: calc(var(--global-baseline) * 3); /* = 24px */
 
-    --global-whitespace-xs: calc(var(--global-baseline) / 2); /* = 4px */
+    --global-whitespace-xs: calc(var(--global-baseline) * .5); /* = 4px */
     --global-whitespace-sm: calc(var(--global-baseline) * 1); /*  = 8px */
     --global-whitespace-md: calc(var(--global-baseline) * 2); /*  = 16px */
     --global-whitespace-lg: calc(var(--global-baseline) * 4); /*  = 32px */
@@ -77,6 +144,8 @@
     --global-input-focus-boxShadowColor: var(--global-color-alpha-x-transparent);
     --global-input-error-boxShadowColor: var(--global-color-error-x-transparent);
 }
+
+/* @media (prefer-color-scheme) */
 
 /*------------------------------------*\
 #GENERIC
@@ -108,12 +177,6 @@ html {
 
     /* OTHER */
     
-}
-
-html[data-theme='dark'] {
-    background-color: var(--color-front);
-    /* --color-front: var(--color-alpha);
-    --color-back: var(--color-beta); */
 }
 
 *,
@@ -414,108 +477,78 @@ input::placeholder {
 */
 
 .c-logo {
+    height: var(--global-whitespace);
     display: flex;
-    padding-top: 2rem;
-    position: sticky;
     align-items: center;
-    font-size: 1.5rem;
-    font-weight: 400;
-    line-height: 1rem;
-}
-
-/*
-    Component: horloge
-    ---
-    The horloge
-*/
-
-.c-horloge__logo {
-    height: 2rem;
-    width: 2rem;
-}
-
-.c-logo .c-horloge__logo {
-    margin-right: 0.5rem;
-}
-
-.c-horloge {
-    height: 25rem;
-    width: 25rem;
-}
-
-.c-line {
-    stroke: var(--global-logo-stroke);
-}
-
-.c-path {
-    fill: var(--global-logo-fill)
-}
-
-.c-ellipse {
-    stroke: var(--global-logo-stroke);
-}
-
-/*
-    Component: App
-    ---
-    Main app wrapper
-*/
-
-.c-app {
-    display: flex;
-    flex-direction: column;
-    min-height: calc(100vh - 2 * 1rem);
-    box-sizing: content-box; /* Paddig optellen bij de (max)width ipv. het toevoegen aan de binnenkant */
-    max-width: 25rem; /* Is dit slim...? */
-    margin: 0 auto;
-    padding: 0 2rem 2rem 2rem; /* 32px 32px (in onze huidige font-size) */
-}
-
-.c-app__summary {
-    font-size: 1.75rem;
-    line-height: 2.5rem;
-}
-
-.c-title {
-    margin: auto;
-    padding: 40px 0 16px 0;
-    text-align: center;
-    font-size: 2rem;
-}
-
-.c-hour {
-    color: var(--global-text-color);
-    font-size: 1rem;
-    font-weight: bold;
-}
-
-
-/*
-    Component: clock
-    ---
-    clock with sun visualisation
-*/
-
-.c-clock {
-    margin-top: auto; /* Vul de ruimte maar op */ 
-}
-
-.c-clock__hour {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    width: 2.5rem;
-
-    font-size: 0.75rem;
-    line-height: 0.875rem;
-
-    transform: translateY(50%); /* 22px : percentage van maken */
+    margin-bottom: var(--global-whitespace-lg);
 }
-.c-clock__hour::before {
-    content: attr(data-time);
-    margin-bottom: 0.5rem;
+
+.c-logo__symbol {
+    height: 100%;
 }
+
+/*
+    Component: Card
+    ---
+    Card with box shadow
+*/
+
+.c-card {
+    --card-borderRadius: var(--global-borderRadius);
+    background-color: var(--card-backgroundColor, White);
+    margin-bottom: var(--global-whitespace);
+    border-radius: var(--card-borderRadius, var(--global-borderRadius));
+    box-shadow: 0 0 0 1px rgba(0,0,0, 0.05), 0 2px 4px rgba(0,0,0,.075);
+    overflow: hidden;
+}
+
+
+.c-card__title {
+    text-align: center;
+    font-size: 24px;
+    line-height: calc(var(--global-baseline) * 3);
+    font-weight: 600;
+}
+
+.c-card__undertitle {
+    text-align: center;
+    font-size: 24px;
+    line-height: calc(var(--global-baseline) * 3);
+    font-weight: 400;
+}
+
+.c-card__text {
+    text-align: center;
+    font-size: 18px;
+    line-height: calc(var(--global-baseline) * 3);
+    font-weight: 400;
+}
+
+/* This allows c-card__body and __footer to have equal padding everywhere */
+
+.c-card__body > *:last-child,
+.c-card__footer > *:last-child,
+.c-card__body > *:last-child > *:last-child,
+.c-card__footer > *:last-child > *:last-child {
+    margin-bottom: 0;
+}
+
+@media (min-width: 27em) {
+    .c-card__body {
+        padding: var(--global-whitespace-xl);
+    }
+
+    .c-card__title {
+        margin-bottom: var(--global-whitespace-xl);
+    }
+}
+
+/*
+    Component: Forms
+    ---
+    Everything form related here
+*/
 
 .c-form-field {
     position: relative;
@@ -524,21 +557,6 @@ input::placeholder {
 .c-form-field--option {
     display: flex;
     align-items: center;
-}
-
-.c-custom-select {
-    display: block;
-    position: relative;
-}
-
-.c-custom-select__symbol {
-    width: var(--global-whitespace);
-    height: var(--global-whitespace);
-    position: absolute;
-    top: calc(var(--global-whitespace) / 2);
-    right: calc(var(--global-whitespace) / 2);
-    pointer-events: none;
-    fill: var(--color-front);
 }
 
 /*
@@ -553,9 +571,9 @@ input::placeholder {
     -moz-appearance: none;
     appearance: none;
     width: 100%;
-    border-radius: var(--input-borderRadius, var(--global-borderRadius));
-    border: var(--input-borderWidth, var(--global-borderWidth)) solid var(--input-borderColor, var(--global-input-borderColor));
-    background-color: transparent;
+    border-radius: var(--global-borderRadius);
+    border: var(--global-borderWidth) solid  var(--global-input-borderColor);
+    background-color: var(--global-input-backgroundColor);
     color: var(--global-input-color);
     font-family: inherit;
     font-size: 16px;
@@ -566,52 +584,13 @@ input::placeholder {
 }
 
 .c-input:hover {
-    border-color: var(--input-hover-borderColor, var(--global-input-hover-borderColor));
+    border-color: var(--global-input-hover-borderColor);
 }
 
 .c-input:focus,
 .c-input:active {
-    border-color: var(--input-focus-borderColor, var(--global-input-focus-borderColor));
+    border-color: var(--global-input-focus-borderColor);
     box-shadow: var(--global-input-focus-boxShadowSpread) var(--input-focus-boxShadowColor, var(--global-input-focus-boxShadowColor));
-}
-
-/*
-Input password with toggle checkbox on top of it needs
-more padding on the right to avoid overlap
-*/
-
-/* .c-input--password-with-toggle {
-    padding-right: 52px;
-} */
-
-/* input password with floating label */
-/* 
-.c-input--with-floating-label:focus {
-    box-shadow: 0 0 0 1px var(--global-input-focus-borderColor);
-} */
-
-.c-grid {
-    display: grid;
-    grid-template-columns: 50% 50%;
-}
-
-.c-verticalline {
-    border-right: 1px solid var(--color-front);
-}
-
-.c-grid__item {
-    text-align: center;
-    padding: var(--global-whitespace-lg);
-}
-.u-column-span-6 {
-    grid-column: span 6;
-}
-
-
-/* option input for checkboxes and radio buttons */
-
-.c-option {
-    margin-right: var(--global-whitespace-sm);
 }
 
 /*
@@ -622,12 +601,10 @@ more padding on the right to avoid overlap
 
 .c-label {
     margin-bottom: 0;
-    font-size: 1rem;
-    padding-bottom: var(--global-whitespace-sm); 
-    padding-top: var(--global-whitespace-lg);   
+    font-size: 14px;
+    padding-bottom: var(--global-whitespace-sm);    
     line-height: calc(var(--global-baseline) * 2);
-    color: var(--color-front);
-    padding-left: var(--global-whitespace-xl);
+    color: var(--label-color, var(--global-label-color));
 }
 
 .c-label--option {
@@ -649,7 +626,7 @@ more padding on the right to avoid overlap
     top: calc(var(--global-baseline) * 1.5);
     left: var(--global-whitespace-sm);
     padding: var(--global-whitespace-xs)  var(--global-whitespace-sm);
-    background-color: transparent;
+    background-color: var(--label--floating-backgroundColor, var(--global-input-backgroundColor));
     transition: transform var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
     z-index: 1;
     border-radius: var(--global-borderRadius);
@@ -661,108 +638,60 @@ more padding on the right to avoid overlap
 }
 
 /*
-    Component: Custom Toggle
+    Component: Button
     ---
-    Visually change a checkbox into a toggle
+    Class to put on form buttons or
 */
 
-.c-custom-toggle-list {
-    --toggle-list-borderColor: var(--global-color-neutral-xxx-light);
-    margin-bottom: 24px;
+.c-button {
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: var(--button-borderRadius, var(--global-borderRadius));
+    border: var(--button-borderWidth, var(--global-borderWidth)) solid var(--button-borderColor, var(--global-color-alpha-dark));
+    background-color: var(--button-backgroundColor, var(--global-color-alpha));
+    color: #fff;
+    padding: calc(var(--global-baseline) * 1.5 - var(--button-borderWidth, var(--global-borderWidth))) var(--global-whitespace-md);
+    line-height: calc(var(--global-baseline) * 3);
+    width: 100%;
+    outline: none;
+    box-shadow: var(--button-boxShadow, 0);
+    transition: all var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
 }
 
-.c-custom-toggle-list__item {
-    margin-bottom: 12px;
+.c-button:hover {
+    border-color: var(--button-hover-borderColor, var(--global-color-alpha-dark));
+    background-color: var(--button-hover-backgroundColor, var(--global-color-alpha-light));
 }
 
-.c-custom-toggle-list__item + .c-custom-toggle-list__item {
-    padding-top: 12px;
-    border-top: 1px solid var(--toggle-list-borderColor);
+.c-button:focus {
+    background-color: var(--button-focus-backgroundColor, var(--global-color-alpha));
+    border-color: var(--button-focus-borderColor, var(--global-color-alpha-dark));
+    box-shadow: var(--global-input-focus-boxShadowSpread) var(--button-focus-boxShadowColor, var(--global-input-focus-boxShadowColor));
 }
 
-.c-custom-toggle {
-    --toggle-backgroundColor: var(--global-color-neutral-xxxx-light);
-    --toggle-borderColor: var(--global-input-borderColor);
-    --toggle-focus-borderColor: var(--global-input-focus-borderColor);
-    --toggle-checked-borderColor: var(--global-color-alpha-dark);
-    --toggle-checked-backgroundColor: var(--global-color-alpha);
-    --toggle-focus-boxShadow: var(--global-input-focus-boxShadowSpread) var(--global-input-focus-boxShadowColor);
-    --toggle-transition: all var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
-    --toggle__switch-backgroundColor: White;
-    --toggle__switch-checked-backgroundColor: White;
-    --toggle__switch-transition: all var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
-    display: flex;
-    align-items: center;
+.c-button:active {
+    background-color: var(--button-active-backgroundColor, var(--global-color-alpha-dark));
+    border-color: var(--button-active-borderColor, var(--global-color-alpha-dark));
+    box-shadow: var(--button-active-boxShadow, 0);
 }
 
-.c-custom-toggle--inverted {
-    flex-direction: row-reverse;
-    justify-content: space-between;
-}
-
-.c-custom-toggle__fake-input {
+.c-image {
     display: block;
-    height: 24px;
-    width: 48px;
-    margin-left: var(--global-whitespace-sm);
-    background-color: var(--toggle-backgroundColor);
-    border-radius: 32px;
-    border: 1px solid var(--toggle-borderColor);
-    transition: var(--toggle-transition);
-    box-shadow: var(--toggle-boxShadow, 0);
+    margin-left: 200px;
+    width: 16.875rem;
 }
-
-.c-custom-toggle--inverted .c-custom-toggle__fake-input {
-    margin-right: 0;
-}
-
-.c-custom-toggle__fake-input::after {
-    position: relative;
-    display: block;
-    content: '';
-    height: 22px;
-    width: 22px;
-    border-radius: 22px;
-    box-shadow: 0 1px 3px 1px rgba(0,0,0,.2);
-    background-color: var(--toggle__switch-backgroundColor);
-    transition: var(--toggle__switch-transition);
-}
-
-/* focused and active state */
-
-.c-option--hidden:focus + .c-custom-toggle,
-.c-option--hidden:active + .c-custom-toggle {
-    --toggle-borderColor: var(--toggle-focus-borderColor);
-    --toggle-boxShadow: var(--toggle-focus-boxShadow);
-}
-
-/* checked state */
-
-.c-option--hidden:checked + .c-custom-toggle {
-    --toggle-backgroundColor: var(--toggle-checked-backgroundColor);
-    --toggle-borderColor: var(--toggle-checked-borderColor);
-    --toggle__switch-backgroundColor: var(--toggle__switch-checked-backgroundColor);
-}
-
-.c-option--hidden:checked + .c-custom-toggle .c-custom-toggle__fake-input::after {
-    transform: translate(24px,0);
-}
-
-/* special active state */
-
-.c-option--hidden:active + .c-custom-toggle .c-custom-toggle__fake-input::after {
-    width: 28px;
-}
-
-.c-option--hidden:active:checked + .c-custom-toggle .c-custom-toggle__fake-input::after {
-    margin-left: -6px;
-}
-
-
 
 /*------------------------------------*\
 #UTILITIES
 \*------------------------------------*/
+
+.has-error {
+    --label-color: var(--global-color-error);
+    --input-borderColor: var(--global-input-error-borderColor);
+    --input-hover-borderColor: var(--global-input-error-borderColor);
+    --input-focus-borderColor: var(--global-input-error-borderColor);
+    --input-focus-boxShadowColor: var(--global-input-error-boxShadowColor);
+}
 
 /*
     Utilities: Mute
@@ -776,16 +705,6 @@ more padding on the right to avoid overlap
 /*------------------------------------*\
 #STATES
 \*------------------------------------*/
-
-/*
-    Change the theme using CSS vars.
-*/
-
-/* Night version: just switch the light and dark vars */
-.is-night {
-    --color-front: var(--color-alpha);
-    --color-back: var(--color-beta);
-}
 
 /*
     Utilities: color
