@@ -1,15 +1,15 @@
-function _parseMillisecondsIntoReadableTime(timestamp) {
-	//Get hours from milliseconds
-	const date = new Date(timestamp * 1000);
-	// Hours part from the timestamp
-	const hours = '0' + date.getHours();
-	// Minutes part from the timestamp
-	const minutes = '0' + date.getMinutes();
-	// Seconds part from the timestamp (gebruiken we nu niet)
-	// const seconds = '0' + date.getSeconds();
+function GetHoursAndMinutes(localTime) {
+    const d = new Date();
+    const h = '0' + d.getHours();
+    const m = '0' + d.getMinutes();
+    const s = '0' + d.getSeconds();
+    return  h.substr(-2) + ":" + m.substr(-2) + ":" + s.substr(-2);
+}
 
-	// Will display time in 10:30(:23) format
-	return hours.substr(-2) + ':' + minutes.substr(-2); //  + ':' + s
+function GetListTimezones(timeZone) {
+    var array = [];
+    array.fill(timeZone.timezone);
+    console.log(array)
 }
 
 
@@ -21,18 +21,16 @@ let itBeDay = () => {
 	document.querySelector('html').classList.remove('is-night');
 };
 
-var array = [];
-
-
-
 // 3 Met de data van de API kunnen we de app opvullen
 const showResult = (queryResponse) => {
     const localTime = document.querySelector('.js-localtime')
     const timeZone  = document.querySelector('.js-timezone')
+    const SelectedTime = document.querySelector(".js-time")
+    const TimeDifference = document.querySelector(".js-difference")
     
     // We gaan eerst een paar onderdelen opvullen
-    localTime.innerHTML = queryResponse.datetime
-    timeZone.innerHTML = queryResponse.timezone
+    localTime.innerHTML = GetHoursAndMinutes(queryResponse.datetime)
+    timeZone.innerHTML = GetListTimezones(queryResponse.timezone)
 };
 
 

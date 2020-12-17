@@ -490,7 +490,7 @@ input::placeholder {
 
 .c-hour {
     color: var(--global-text-color);
-    font-size: 1rem;
+    font-size: 4rem;
     font-weight: bold;
 }
 
@@ -626,6 +626,15 @@ more padding on the right to avoid overlap
 */
 
 .c-label {
+    margin-bottom: 0;
+    font-size: 1rem;
+    padding-bottom: var(--global-whitespace-sm); 
+    padding-top: var(--global-whitespace-lg);   
+    line-height: calc(var(--global-baseline) * 2);
+    color: var(--color-front);
+}
+
+.c-label__toggle {
     margin-bottom: 0;
     font-size: 1rem;
     padding-bottom: var(--global-whitespace-sm); 
