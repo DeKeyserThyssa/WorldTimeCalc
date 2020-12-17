@@ -121,12 +121,6 @@ html[data-theme='dark'] {
     --color-back: var(--color-beta); */
 }
 
-*,
-*:before,
-*:after {
-    box-sizing: inherit;
-}
-
 /*
 * Remove text-shadow in selection highlight:
 * https://twitter.com/miketaylr/status/12228805301
@@ -458,6 +452,10 @@ input::placeholder {
 
 .c-ellipse {
     stroke: var(--global-logo-stroke);
+}
+
+.c-text {
+    fill: var(--global-logo-fill);
 }
 
 /*

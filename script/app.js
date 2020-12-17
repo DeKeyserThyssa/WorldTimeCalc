@@ -12,6 +12,10 @@ function GetListTimezones(timeZone) {
     console.log(array)
 }
 
+function GetDifference(timeDifference){
+    const Difference = queryResponse.datetime - queryResponse.utc_datetime;
+    return Difference;
+}
 
 let itBeNight = () => {
 	document.querySelector('html').classList.add('is-night');
@@ -25,12 +29,15 @@ let itBeDay = () => {
 const showResult = (queryResponse) => {
     const localTime = document.querySelector('.js-localtime')
     const timeZone  = document.querySelector('.js-timezone')
-    const SelectedTime = document.querySelector(".js-time")
-    const TimeDifference = document.querySelector(".js-difference")
+    const selectedTime = document.querySelector(".js-time")
+    const timeDifference = document.querySelector(".js-difference")
     
     // We gaan eerst een paar onderdelen opvullen
     localTime.innerHTML = GetHoursAndMinutes(queryResponse.datetime)
     timeZone.innerHTML = GetListTimezones(queryResponse.timezone)
+    selectedTime.innerHTML = GetHoursAndMinutes(queryResponse.utc_datetime)
+    console.log(selectedTime)
+    timeDifference.innerHTML = GetDifference(queryResponse.dst_offset)
 };
 
 
