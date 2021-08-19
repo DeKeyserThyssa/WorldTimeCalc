@@ -13,6 +13,9 @@
 
     --color-front: var(--color-beta);
     --color-back: var(--color-alpha);
+    --color-front-dark: var(--color-alpha);
+    --color-back-dark: var(--color-beta);
+    --color-title: #042c66;
 
     --global-background: var(--color-back);
     --global-text-color: var(--color-front);
@@ -23,6 +26,11 @@
     --global-color-error: #ff3333;
     --global-color-error-transparent: #FF3333bf;
     --global-color-error-x-transparent: #FF33334d;
+
+    --global-color-title: #042c66;
+    --global-color-title-dark: #b3d2ff;
+    --global-color-subtitle: #184a94;
+    --global-color-subtitle-dark: #7caff7;
 
 
     --global-color-alpha: #3385FF;
@@ -78,10 +86,10 @@
     --global-input-error-boxShadowColor: var(--global-color-error-x-transparent);
 }
 
-[data-theme="dark"] {
+/* [data-theme="dark"] {
     --color-front: var(--color-alpha);
     --color-back: var(--color-beta);
-}
+} */
 
 /*------------------------------------*\
 #GENERIC
@@ -109,17 +117,17 @@ html {
     -moz-osx-font-smoothing: grayscale;
 
     /* APPEARANCE */
-    background-color: var(--color-back);
+    background-color: #ECF7FF;
 
     /* OTHER */
     
 }
 
-html[data-theme='dark'] {
+/* html[is-night] {
     background-color: var(--color-front);
-    /* --color-front: var(--color-alpha);
-    --color-back: var(--color-beta); */
-}
+    --color-front: var(--color-alpha);
+    --color-back: var(--color-beta);
+} */
 
 /*
 * Remove text-shadow in selection highlight:
@@ -480,15 +488,22 @@ input::placeholder {
 }
 
 .c-title {
+    color: var(--global-color-title);
     margin: auto;
-    padding: 40px 0 16px 0;
+    padding: 20px 0 16px 0;
     text-align: center;
     font-size: 2rem;
 }
 
+.c-timezone {
+    font-size: 1.5rem;
+    color: var(--global-color-subtitle);
+    text-align: center;
+}
+
 .c-hour {
-    color: var(--global-text-color);
-    font-size: 4rem;
+    font-size: 1.2rem;
+    text-align: center;
     font-weight: bold;
 }
 
@@ -542,6 +557,10 @@ input::placeholder {
     right: calc(var(--global-whitespace) / 2);
     pointer-events: none;
     fill: var(--color-front);
+}
+
+.dark .c-custom-select__symbol {
+    fill: var(--color-front-dark);
 }
 
 /*
@@ -602,10 +621,21 @@ more padding on the right to avoid overlap
     border-right: 1px solid var(--color-front);
 }
 
+.dark .c-verticalline {
+    border-right: 1px solid var(--color-front-dark);
+}
+
 .c-grid__item {
     text-align: center;
     padding: var(--global-whitespace-lg);
 }
+
+.c-time {
+    font-size: 0.8rem;
+    margin-top: var(--global-whitespace-xs);
+    /* text-align: right; */
+}
+
 .u-column-span-6 {
     grid-column: span 6;
 }
@@ -632,6 +662,10 @@ more padding on the right to avoid overlap
     color: var(--color-front);
 }
 
+.dark .c-label {
+    color: var(--color-front-dark);
+}
+
 .c-label__toggle {
     margin-bottom: 0;
     font-size: 1rem;
@@ -640,6 +674,10 @@ more padding on the right to avoid overlap
     line-height: calc(var(--global-baseline) * 2);
     color: var(--color-front);
     padding-left: var(--global-whitespace-xl);
+}
+
+.dark .c-label__toggle {
+    color: var(--color-front-dark);
 }
 
 .c-label--option {
@@ -798,6 +836,74 @@ more padding on the right to avoid overlap
     --color-front: var(--color-alpha);
     --color-back: var(--color-beta);
 }
+
+.animation-list {
+    margin: 0 auto;
+}
+
+.night-light-label #night-light-checkbox {
+    position: absolute;
+    visibility: hidden;
+}
+
+.night-light-label {
+    display: block;
+    margin: 20px 0;
+    height: 31px;
+    width: 60px;
+    border: 2px solid #4672fe;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    text-align: right;
+}
+
+.night-light-label .night-light-ball {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 2.5px;
+    left: 2px;
+    border-radius: 50%;
+    background: #4672fe;
+    z-index: 99;
+    transition: 300ms;
+}
+
+.night-light-label #night-light-checkbox:checked + .night-light-ball {
+    transform: translateX(28px);
+}
+
+.moon-svg,
+.sun-svg {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.moon-svg {
+    right: 5px;  
+}
+
+.sun-svg {
+    left: 5px;
+}
+
+.dark #moon-svg,
+.dark #sun-svg {
+    fill: #e0e0e0 !important;
+}
+
+.dark {
+    background-color: var(--color-back-dark);
+    color: var(--color-front-dark);
+    --global-logo-fill: var(--color-front-dark);
+    --global-logo-stroke: var(--color-front-dark);
+    --global-color-title: var(var(--global-color-title-dark))
+}
+
 
 /*
     Utilities: color
