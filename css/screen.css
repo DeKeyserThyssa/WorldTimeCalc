@@ -124,9 +124,11 @@ html {
 }
 
 /* html[is-night] {
-    background-color: var(--color-front);
-    --color-front: var(--color-alpha);
-    --color-back: var(--color-beta);
+    background-color: var(--color-back-dark);
+    color: var(--color-front-dark);
+    --global-logo-fill: var(--color-front-dark);
+    --global-logo-stroke: var(--color-front-dark);
+    --global-color-title: var(var(--global-color-title-dark))
 } */
 
 /*
@@ -507,6 +509,17 @@ input::placeholder {
     font-weight: bold;
 }
 
+/* .c-canvas {
+    width: 200px;
+    height: 200px;
+}
+
+@media (min-width: 481px) {
+	.c-canvas {
+		width: 400px;
+        height: 400px;
+	}
+} */
 
 /*
     Component: clock
@@ -832,10 +845,13 @@ more padding on the right to avoid overlap
 */
 
 /* Night version: just switch the light and dark vars */
-.is-night {
-    --color-front: var(--color-alpha);
-    --color-back: var(--color-beta);
-}
+/* .is-night {
+    background-color: var(--color-back-dark);
+    color: var(--color-front-dark);
+    --global-logo-fill: var(--color-front-dark);
+    --global-logo-stroke: var(--color-front-dark);
+    --global-color-title: var(var(--global-color-title-dark))
+} */
 
 .animation-list {
     margin: 0 auto;
@@ -901,7 +917,8 @@ more padding on the right to avoid overlap
     color: var(--color-front-dark);
     --global-logo-fill: var(--color-front-dark);
     --global-logo-stroke: var(--color-front-dark);
-    --global-color-title: var(var(--global-color-title-dark))
+    --global-color-title: var(--global-color-title-dark);
+    --global-color-subtitle: var(--global-color-subtitle-dark);
 }
 
 

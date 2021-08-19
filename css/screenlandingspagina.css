@@ -354,6 +354,14 @@ input::placeholder {
     min-height: 100vh;
     display: flex;
     align-items: center;
+    flex-direction: column;
+}
+
+@media (min-width: 670px) {
+    .o-row {
+        display: flex;
+        flex-direction: row;
+    }
 }
 
 /* size modifiers */
@@ -503,7 +511,6 @@ input::placeholder {
     box-shadow: 0 0 0 1px rgba(0,0,0, 0.05), 0 2px 4px rgba(0,0,0,.075);
     overflow: hidden;
 }
-
 
 .c-card__title {
     text-align: center;
